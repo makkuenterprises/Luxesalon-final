@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LuxeSalon SaaS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Razorpay SDK -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    
-    <!-- Tailwind CSS (CDN for immediate preview) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -18,10 +14,10 @@
               sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             },
             colors: {
-              primary: '#0f172a', // Slate 900
+              primary: '#0f172a', // Slate 900 (Luxury Black)
               secondary: '#ca8a04', // Gold 600
               accent: '#eab308', // Gold 500
-              background: '#f8fafc',
+              background: '#f8fafc', // Slate 50
               surface: '#ffffff',
             },
             boxShadow: {
@@ -31,8 +27,6 @@
         }
       }
     </script>
-
-    <!-- Custom Styles -->
     <style>
       html {
         scroll-behavior: smooth;
@@ -40,7 +34,7 @@
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
       }
-      /* Custom Scrollbar */
+      /* Custom Scrollbar for cleaner look */
       ::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -61,6 +55,12 @@
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.3);
       }
+      .premium-gradient {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      }
+      .gold-gradient {
+        background: linear-gradient(135deg, #ca8a04 0%, #eab308 100%);
+      }
       .animate-fade-in {
         animation: fadeIn 0.5s ease-out forwards;
       }
@@ -69,27 +69,25 @@
         to { opacity: 1; transform: translateY(0); }
       }
     </style>
-
-    <script type="importmap">
+  <script type="importmap">
 {
   "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
-    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
     "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
     "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "vite": "https://aistudiocdn.com/vite@^7.2.4",
     "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
-  </head>
-  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-yellow-600 selection:text-white">
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background text-slate-800 antialiased selection:bg-secondary selection:text-white">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
