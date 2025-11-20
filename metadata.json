@@ -1,0 +1,5 @@
+{
+  "name": "LuxeSalon - SaaS Management System",
+  "description": "A comprehensive React-based Admin Panel for Salon Management including POS, Appointments, Dashboard analytics, and AI-driven Marketing campaigns using Gemini.",
+  "requestFramePermissions": []
+}
